@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-
+import os
+import logging
 from app.db.database import connect_to_as400
 from fastapi import FastAPI, status
-import logging
-import os
-from dataclasses import dataclass
 from fastapi.responses import JSONResponse
+from models import Assure, Entreprise, Contrat, Beneficiaire, Service
 
+db_name=os.getenv("CW_AS400_DATABASE")
+print(db_name)
 app = FastAPI()
 
 
@@ -21,7 +22,7 @@ et renvoie:
     - les services 
     - les contrats
 """)
-def get_assure(id:int, date_fin: str | None = None):
+def get_assure(id:int):
     header1 = ['id', 'cntr_id', 'pers_id', 'date_debut', 'date_fin', 'statut', 'motif_debut', 'motif_fin', 'mod_paiemt', 'freq_paiemt', 'exo_coti', 'parent_id', 'valide_du', 'createur', 'date_ins ', 'date_modif']
     header2 = ["pers_id","numero","matricule","numero_ss","nom","prenom","patronyme","date_naiss","regime","grand_regime","sexe","type","rang_jumeau","situation_fam","teletrans","alert_mail","date_cpte_cli","rue_ligne1","rue_ligne2","rue_ligne3","cp","ville","pays","date_adr","email","tel_fixe","tel_mobile","parent_id","date_creation","aut_prelev","date_ins","date_modif"]
     header = header1+header2
@@ -35,7 +36,10 @@ def get_assure(id:int, date_fin: str | None = None):
         row = cursor.fetchone()
         if row is None or len(row) == 0:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Assuré N°<{id}> not found.")
-        return {"assure": dict(zip(header, row))}
+        else:
+            assure = dict(zip(header, row))
+            assure["contrats"] = get_contrats(assure["cntr_id"])
+        return {"assure": assure}
     
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
     
@@ -61,7 +65,7 @@ Cette méthode prend en paramètre un numéro de contrat (un entier positif )
 et renvoie:
 un code de status ainsi que les informations associées au contrat
 """)
-def get_contrat(id:int, ):
+def get_contrats(id:int):
     return {"status": "ok"}
 
 @app.get("/beneficiaires/{id:int}", summary="Consulter la liste des bénéficiaires",
@@ -69,8 +73,9 @@ def get_contrat(id:int, ):
 Cette méthode prend en paramètre un numéro d'assuré (un entier positif )
 et renvoie:
 un code de status ainsi que la liste des bénéficiaires""")
-def get_assure(id:int):
-    return {"status": "ok"}
+def get_beneficiaires(id:int) -> list[Beneficiaire]| JSONResponse:
+    Beneficiaire.parse_obj(row)
+    return [Beneficiaire(), ]
 
 @app.get("/healthcheck", status_code=200)
 def healthcheck():
