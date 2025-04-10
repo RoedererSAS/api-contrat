@@ -1,0 +1,434 @@
+2025-04-10 18:27:30,583:INFO:Will watch for changes in these directories: ['/workspaces/api-contrat']
+2025-04-10 18:27:30,584:INFO:Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-04-10 18:27:30,585:INFO:Started reloader process [10833] using WatchFiles
+2025-04-10 18:27:31,195:INFO:Started server process [10839]
+2025-04-10 18:27:31,196:INFO:Waiting for application startup.
+2025-04-10 18:27:31,197:INFO:Application startup complete.
+2025-04-10 18:27:31,499:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:12,137:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:29:12,139:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:12,157:INFO:Shutting down
+2025-04-10 18:29:12,259:INFO:Waiting for application shutdown.
+2025-04-10 18:29:12,261:INFO:Application shutdown complete.
+2025-04-10 18:29:12,262:INFO:Finished server process [10839]
+2025-04-10 18:29:12,618:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:12,618:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:13,173:INFO:Started server process [11241]
+2025-04-10 18:29:13,174:INFO:Waiting for application startup.
+2025-04-10 18:29:13,174:INFO:Application startup complete.
+2025-04-10 18:29:13,524:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:29:18,298:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:29:18,298:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:18,396:INFO:Shutting down
+2025-04-10 18:29:18,498:INFO:Waiting for application shutdown.
+2025-04-10 18:29:18,499:INFO:Application shutdown complete.
+2025-04-10 18:29:18,500:INFO:Finished server process [11241]
+2025-04-10 18:29:18,857:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:40,320:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:29:40,320:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:40,672:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:49,021:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:29:49,022:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:49,373:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:49,374:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:49,939:INFO:Started server process [11481]
+2025-04-10 18:29:49,940:INFO:Waiting for application startup.
+2025-04-10 18:29:49,941:INFO:Application startup complete.
+2025-04-10 18:29:50,230:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:29:50,581:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:51,435:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:29:51,436:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:29:51,447:INFO:Shutting down
+2025-04-10 18:29:51,549:INFO:Waiting for application shutdown.
+2025-04-10 18:29:51,551:INFO:Application shutdown complete.
+2025-04-10 18:29:51,552:INFO:Finished server process [11481]
+2025-04-10 18:29:51,909:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:29:52,101:INFO:Started server process [11500]
+2025-04-10 18:29:52,102:INFO:Waiting for application startup.
+2025-04-10 18:29:52,102:INFO:Application startup complete.
+2025-04-10 18:29:52,310:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:30:29,307:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:30:29,308:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:30:29,357:INFO:Shutting down
+2025-04-10 18:30:29,458:INFO:Waiting for application shutdown.
+2025-04-10 18:30:29,459:INFO:Application shutdown complete.
+2025-04-10 18:30:29,459:INFO:Finished server process [11500]
+2025-04-10 18:30:29,813:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:31:08,435:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:31:08,436:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:31:08,788:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:35,790:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:34:35,792:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:34:36,147:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:36,498:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:39,715:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:34:39,715:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:34:40,067:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:40,419:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:46,951:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:34:46,952:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:34:47,305:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:47,656:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:57,156:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:34:57,157:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:34:57,510:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:34:57,510:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:34:58,066:INFO:Started server process [12553]
+2025-04-10 18:34:58,068:INFO:Waiting for application startup.
+2025-04-10 18:34:58,068:INFO:Application startup complete.
+2025-04-10 18:34:58,367:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:36:02,752:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:36:02,753:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:36:02,759:INFO:Shutting down
+2025-04-10 18:36:02,862:INFO:Waiting for application shutdown.
+2025-04-10 18:36:02,864:INFO:Application shutdown complete.
+2025-04-10 18:36:02,866:INFO:Finished server process [12553]
+2025-04-10 18:36:03,224:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:36:03,402:INFO:Started server process [12766]
+2025-04-10 18:36:03,403:INFO:Waiting for application startup.
+2025-04-10 18:36:03,404:INFO:Application startup complete.
+2025-04-10 18:36:03,625:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:36:46,681:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:36:46,682:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:36:46,703:INFO:Shutting down
+2025-04-10 18:36:46,805:INFO:Waiting for application shutdown.
+2025-04-10 18:36:46,806:INFO:Application shutdown complete.
+2025-04-10 18:36:46,807:INFO:Finished server process [12766]
+2025-04-10 18:36:47,165:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:36:47,347:INFO:Started server process [12927]
+2025-04-10 18:36:47,348:INFO:Waiting for application startup.
+2025-04-10 18:36:47,349:INFO:Application startup complete.
+2025-04-10 18:36:47,567:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:37:55,300:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:37:55,300:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:37:55,372:INFO:Shutting down
+2025-04-10 18:37:55,475:INFO:Waiting for application shutdown.
+2025-04-10 18:37:55,477:INFO:Application shutdown complete.
+2025-04-10 18:37:55,478:INFO:Finished server process [12927]
+2025-04-10 18:37:55,834:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:37:56,015:INFO:Started server process [13145]
+2025-04-10 18:37:56,016:INFO:Waiting for application startup.
+2025-04-10 18:37:56,017:INFO:Application startup complete.
+2025-04-10 18:37:56,185:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:48:45,467:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:48:45,468:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:48:45,538:INFO:Shutting down
+2025-04-10 18:48:45,640:INFO:Waiting for application shutdown.
+2025-04-10 18:48:45,642:INFO:Application shutdown complete.
+2025-04-10 18:48:45,642:INFO:Finished server process [13145]
+2025-04-10 18:48:45,997:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:48:46,185:INFO:Started server process [14894]
+2025-04-10 18:48:46,186:INFO:Waiting for application startup.
+2025-04-10 18:48:46,187:INFO:Application startup complete.
+2025-04-10 18:48:46,398:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:48:48,508:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:48:48,508:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:48:48,595:INFO:Shutting down
+2025-04-10 18:48:48,696:INFO:Waiting for application shutdown.
+2025-04-10 18:48:48,698:INFO:Application shutdown complete.
+2025-04-10 18:48:48,698:INFO:Finished server process [14894]
+2025-04-10 18:48:49,053:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:48:49,237:INFO:Started server process [14928]
+2025-04-10 18:48:49,238:INFO:Waiting for application startup.
+2025-04-10 18:48:49,238:INFO:Application startup complete.
+2025-04-10 18:48:49,404:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:50:04,639:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:50:04,639:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:50:04,692:INFO:Shutting down
+2025-04-10 18:50:04,794:INFO:Waiting for application shutdown.
+2025-04-10 18:50:04,795:INFO:Application shutdown complete.
+2025-04-10 18:50:04,796:INFO:Finished server process [14928]
+2025-04-10 18:50:05,150:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:50:05,359:INFO:Started server process [15181]
+2025-04-10 18:50:05,361:INFO:Waiting for application startup.
+2025-04-10 18:50:05,362:INFO:Application startup complete.
+2025-04-10 18:50:05,551:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:50:07,310:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:50:07,312:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:50:07,371:INFO:Shutting down
+2025-04-10 18:50:07,473:INFO:Waiting for application shutdown.
+2025-04-10 18:50:07,475:INFO:Application shutdown complete.
+2025-04-10 18:50:07,477:INFO:Finished server process [15181]
+2025-04-10 18:50:07,837:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:50:08,028:INFO:Started server process [15214]
+2025-04-10 18:50:08,029:INFO:Waiting for application startup.
+2025-04-10 18:50:08,030:INFO:Application startup complete.
+2025-04-10 18:50:08,238:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:51:40,607:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/db/database.py')}
+2025-04-10 18:51:40,609:WARNING:WatchFiles detected changes in 'app/db/database.py'. Reloading...
+2025-04-10 18:51:40,665:INFO:Shutting down
+2025-04-10 18:51:40,766:INFO:Waiting for application shutdown.
+2025-04-10 18:51:40,767:INFO:Application shutdown complete.
+2025-04-10 18:51:40,768:INFO:Finished server process [15214]
+2025-04-10 18:51:41,125:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:51:41,476:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:51:42,732:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/db/database.py')}
+2025-04-10 18:51:42,733:WARNING:WatchFiles detected changes in 'app/db/database.py'. Reloading...
+2025-04-10 18:51:43,086:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:51:43,338:INFO:Started server process [15558]
+2025-04-10 18:51:43,339:INFO:Waiting for application startup.
+2025-04-10 18:51:43,340:INFO:Application startup complete.
+2025-04-10 18:51:43,437:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:51:43,789:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/db/__pycache__/database.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/db/__pycache__')}
+2025-04-10 18:53:45,811:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:53:45,812:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:53:45,815:INFO:Shutting down
+2025-04-10 18:53:45,916:INFO:Waiting for application shutdown.
+2025-04-10 18:53:45,916:INFO:Application shutdown complete.
+2025-04-10 18:53:45,917:INFO:Finished server process [15558]
+2025-04-10 18:53:46,271:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:53:46,445:INFO:Started server process [15935]
+2025-04-10 18:53:46,446:INFO:Waiting for application startup.
+2025-04-10 18:53:46,447:INFO:Application startup complete.
+2025-04-10 18:53:46,622:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:53:46,973:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:54:05,070:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:54:05,072:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:54:05,130:INFO:Shutting down
+2025-04-10 18:54:05,231:INFO:Waiting for application shutdown.
+2025-04-10 18:54:05,233:INFO:Application shutdown complete.
+2025-04-10 18:54:05,234:INFO:Finished server process [15935]
+2025-04-10 18:54:05,590:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:54:05,590:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:54:06,149:INFO:Started server process [16044]
+2025-04-10 18:54:06,150:INFO:Waiting for application startup.
+2025-04-10 18:54:06,151:INFO:Application startup complete.
+2025-04-10 18:54:06,245:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:55:40,460:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:55:40,461:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:55:40,484:INFO:Shutting down
+2025-04-10 18:55:40,586:INFO:Waiting for application shutdown.
+2025-04-10 18:55:40,587:INFO:Application shutdown complete.
+2025-04-10 18:55:40,588:INFO:Finished server process [16044]
+2025-04-10 18:55:40,946:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:55:41,166:INFO:Started server process [16330]
+2025-04-10 18:55:41,167:INFO:Waiting for application startup.
+2025-04-10 18:55:41,168:INFO:Application startup complete.
+2025-04-10 18:55:41,347:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:58:03,069:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:58:03,070:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:58:03,132:INFO:Shutting down
+2025-04-10 18:58:03,233:INFO:Waiting for application shutdown.
+2025-04-10 18:58:03,234:INFO:Application shutdown complete.
+2025-04-10 18:58:03,235:INFO:Finished server process [16330]
+2025-04-10 18:58:03,589:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:58:07,309:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:58:07,309:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:58:07,661:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:58:09,976:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:58:09,977:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:58:10,332:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:58:10,530:INFO:Started server process [16802]
+2025-04-10 18:58:10,531:INFO:Waiting for application startup.
+2025-04-10 18:58:10,532:INFO:Application startup complete.
+2025-04-10 18:58:10,683:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:58:11,034:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:58:11,385:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:21,597:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:59:21,598:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:21,647:INFO:Shutting down
+2025-04-10 18:59:21,748:INFO:Waiting for application shutdown.
+2025-04-10 18:59:21,750:INFO:Application shutdown complete.
+2025-04-10 18:59:21,751:INFO:Finished server process [16802]
+2025-04-10 18:59:22,106:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:22,294:INFO:Started server process [17037]
+2025-04-10 18:59:22,295:INFO:Waiting for application startup.
+2025-04-10 18:59:22,295:INFO:Application startup complete.
+2025-04-10 18:59:22,508:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:59:27,331:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:59:27,333:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:27,420:INFO:Shutting down
+2025-04-10 18:59:27,521:INFO:Waiting for application shutdown.
+2025-04-10 18:59:27,523:INFO:Application shutdown complete.
+2025-04-10 18:59:27,525:INFO:Finished server process [17037]
+2025-04-10 18:59:27,883:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:28,074:INFO:Started server process [17080]
+2025-04-10 18:59:28,075:INFO:Waiting for application startup.
+2025-04-10 18:59:28,076:INFO:Application startup complete.
+2025-04-10 18:59:28,234:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:59:29,439:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:59:29,440:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:29,481:INFO:Shutting down
+2025-04-10 18:59:29,582:INFO:Waiting for application shutdown.
+2025-04-10 18:59:29,583:INFO:Application shutdown complete.
+2025-04-10 18:59:29,584:INFO:Finished server process [17080]
+2025-04-10 18:59:29,938:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:30,160:INFO:Started server process [17120]
+2025-04-10 18:59:30,161:INFO:Waiting for application startup.
+2025-04-10 18:59:30,162:INFO:Application startup complete.
+2025-04-10 18:59:30,339:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:59:34,811:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:59:34,811:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:34,883:INFO:Shutting down
+2025-04-10 18:59:34,984:INFO:Waiting for application shutdown.
+2025-04-10 18:59:34,986:INFO:Application shutdown complete.
+2025-04-10 18:59:34,987:INFO:Finished server process [17120]
+2025-04-10 18:59:35,344:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:35,534:INFO:Started server process [17191]
+2025-04-10 18:59:35,534:INFO:Waiting for application startup.
+2025-04-10 18:59:35,535:INFO:Application startup complete.
+2025-04-10 18:59:35,745:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:59:37,857:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:59:37,858:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:37,948:INFO:Shutting down
+2025-04-10 18:59:38,050:INFO:Waiting for application shutdown.
+2025-04-10 18:59:38,053:INFO:Application shutdown complete.
+2025-04-10 18:59:38,054:INFO:Finished server process [17191]
+2025-04-10 18:59:38,412:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:38,637:INFO:Started server process [17239]
+2025-04-10 18:59:38,638:INFO:Waiting for application startup.
+2025-04-10 18:59:38,639:INFO:Application startup complete.
+2025-04-10 18:59:38,763:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 18:59:41,174:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 18:59:41,175:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:41,249:INFO:Shutting down
+2025-04-10 18:59:41,350:INFO:Waiting for application shutdown.
+2025-04-10 18:59:41,351:INFO:Application shutdown complete.
+2025-04-10 18:59:41,352:INFO:Finished server process [17239]
+2025-04-10 18:59:41,708:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 18:59:41,708:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 18:59:42,268:INFO:Started server process [17281]
+2025-04-10 18:59:42,269:INFO:Waiting for application startup.
+2025-04-10 18:59:42,270:INFO:Application startup complete.
+2025-04-10 18:59:42,365:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:00:39,235:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 19:00:39,236:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:00:39,332:INFO:Shutting down
+2025-04-10 19:00:39,434:INFO:Waiting for application shutdown.
+2025-04-10 19:00:39,436:INFO:Application shutdown complete.
+2025-04-10 19:00:39,437:INFO:Finished server process [17281]
+2025-04-10 19:00:39,794:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:39,795:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:00:40,349:INFO:Started server process [17483]
+2025-04-10 19:00:40,350:INFO:Waiting for application startup.
+2025-04-10 19:00:40,351:INFO:Application startup complete.
+2025-04-10 19:00:40,400:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:00:40,751:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:42,509:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 19:00:42,510:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:00:42,560:INFO:Shutting down
+2025-04-10 19:00:42,661:INFO:Waiting for application shutdown.
+2025-04-10 19:00:42,663:INFO:Application shutdown complete.
+2025-04-10 19:00:42,664:INFO:Finished server process [17483]
+2025-04-10 19:00:43,020:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:43,230:INFO:Started server process [17538]
+2025-04-10 19:00:43,231:INFO:Waiting for application startup.
+2025-04-10 19:00:43,232:INFO:Application startup complete.
+2025-04-10 19:00:43,421:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:00:45,832:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 19:00:45,833:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:00:45,842:INFO:Shutting down
+2025-04-10 19:00:45,944:INFO:Waiting for application shutdown.
+2025-04-10 19:00:45,947:INFO:Application shutdown complete.
+2025-04-10 19:00:45,948:INFO:Finished server process [17538]
+2025-04-10 19:00:46,305:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:46,482:INFO:Started server process [17582]
+2025-04-10 19:00:46,483:INFO:Waiting for application startup.
+2025-04-10 19:00:46,483:INFO:Application startup complete.
+2025-04-10 19:00:46,657:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:47,008:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:00:47,359:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:54,246:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 19:00:54,247:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:00:54,321:INFO:Shutting down
+2025-04-10 19:00:54,422:INFO:Waiting for application shutdown.
+2025-04-10 19:00:54,423:INFO:Application shutdown complete.
+2025-04-10 19:00:54,424:INFO:Finished server process [17582]
+2025-04-10 19:00:54,795:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:00:54,976:INFO:Started server process [17665]
+2025-04-10 19:00:54,977:INFO:Waiting for application startup.
+2025-04-10 19:00:54,978:INFO:Application startup complete.
+2025-04-10 19:00:55,146:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:00:55,497:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:02:49,213:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 19:02:49,215:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:02:49,242:INFO:Shutting down
+2025-04-10 19:02:49,344:INFO:Waiting for application shutdown.
+2025-04-10 19:02:49,347:INFO:Application shutdown complete.
+2025-04-10 19:02:49,349:INFO:Finished server process [17665]
+2025-04-10 19:02:49,707:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:02:49,707:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:02:50,267:INFO:Started server process [18137]
+2025-04-10 19:02:50,268:INFO:Waiting for application startup.
+2025-04-10 19:02:50,268:INFO:Application startup complete.
+2025-04-10 19:02:50,412:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:02:54,335:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/main.py')}
+2025-04-10 19:02:54,336:WARNING:WatchFiles detected changes in 'app/main.py'. Reloading...
+2025-04-10 19:02:54,386:INFO:Shutting down
+2025-04-10 19:02:54,488:INFO:Waiting for application shutdown.
+2025-04-10 19:02:54,490:INFO:Application shutdown complete.
+2025-04-10 19:02:54,491:INFO:Finished server process [18137]
+2025-04-10 19:02:54,848:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:02:55,031:INFO:Started server process [18175]
+2025-04-10 19:02:55,032:INFO:Waiting for application startup.
+2025-04-10 19:02:55,032:INFO:Application startup complete.
+2025-04-10 19:02:55,250:DEBUG:3 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__/main.cpython-312.pyc'), (<Change.modified: 2>, '/workspaces/api-contrat/app.log'), (<Change.modified: 2>, '/workspaces/api-contrat/app/__pycache__')}
+2025-04-10 19:03:45,549:INFO:Tentative de connexion à AS400...
+2025-04-10 19:03:45,770:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:15:20,227:INFO:Shutting down
+2025-04-10 19:15:20,330:INFO:Waiting for application shutdown.
+2025-04-10 19:15:20,332:INFO:Application shutdown complete.
+2025-04-10 19:15:20,333:INFO:Finished server process [18175]
+2025-04-10 19:15:20,340:INFO:Stopping reloader process [10833]
+2025-04-10 19:25:36,656:INFO:Will watch for changes in these directories: ['/workspaces/api-contrat']
+2025-04-10 19:25:36,657:INFO:Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-04-10 19:25:36,658:INFO:Started reloader process [22516] using WatchFiles
+2025-04-10 19:25:37,197:INFO:Started server process [22521]
+2025-04-10 19:25:37,198:INFO:Waiting for application startup.
+2025-04-10 19:25:37,198:INFO:Application startup complete.
+2025-04-10 19:25:37,267:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:25:48,462:INFO:Tentative de connexion à AS400...
+2025-04-10 19:25:48,721:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:27:45,763:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/db/database.py')}
+2025-04-10 19:27:45,765:WARNING:WatchFiles detected changes in 'app/db/database.py'. Reloading...
+2025-04-10 19:27:45,770:INFO:Shutting down
+2025-04-10 19:27:45,872:INFO:Waiting for application shutdown.
+2025-04-10 19:27:45,872:INFO:Application shutdown complete.
+2025-04-10 19:27:45,873:INFO:Finished server process [22521]
+2025-04-10 19:27:46,230:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:27:46,580:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:27:46,931:DEBUG:2 changes detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app/db/__pycache__'), (<Change.modified: 2>, '/workspaces/api-contrat/app/db/__pycache__/database.cpython-312.pyc')}
+2025-04-10 19:27:48,136:INFO:Stopping reloader process [22516]
+2025-04-10 19:30:44,232:INFO:Will watch for changes in these directories: ['/workspaces/api-contrat']
+2025-04-10 19:30:44,233:INFO:Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-04-10 19:30:44,233:INFO:Started reloader process [23908] using WatchFiles
+2025-04-10 19:30:44,793:INFO:Started server process [23910]
+2025-04-10 19:30:44,794:INFO:Waiting for application startup.
+2025-04-10 19:30:44,795:INFO:Application startup complete.
+2025-04-10 19:31:11,978:INFO:Tentative de connexion à AS400...
+2025-04-10 19:31:12,234:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:31:12,585:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:34:57,360:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/Dockerfile')}
+2025-04-10 19:34:57,712:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:34:59,722:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/Dockerfile')}
+2025-04-10 19:35:00,073:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:35:00,425:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:35:05,754:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/Dockerfile')}
+2025-04-10 19:35:06,105:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:35:06,456:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:35:49,706:INFO:Tentative de connexion à AS400...
+2025-04-10 19:35:49,990:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:43:36,930:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/Dockerfile')}
+2025-04-10 19:43:37,282:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:43:37,635:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:46:54,781:INFO:Tentative de connexion à AS400...
+2025-04-10 19:46:54,958:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:54:21,010:INFO:Shutting down
+2025-04-10 19:54:21,111:INFO:Waiting for application shutdown.
+2025-04-10 19:54:21,113:INFO:Application shutdown complete.
+2025-04-10 19:54:21,113:INFO:Finished server process [23910]
+2025-04-10 19:54:21,117:INFO:Stopping reloader process [23908]
+2025-04-10 19:54:48,648:INFO:Will watch for changes in these directories: ['/workspaces/api-contrat']
+2025-04-10 19:54:48,649:INFO:Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-04-10 19:54:48,650:INFO:Started reloader process [29782] using WatchFiles
+2025-04-10 19:54:49,191:INFO:Started server process [29784]
+2025-04-10 19:54:49,192:INFO:Waiting for application startup.
+2025-04-10 19:54:49,193:INFO:Application startup complete.
+2025-04-10 19:54:49,259:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:56:13,347:INFO:Tentative de connexion à AS400...
+2025-04-10 19:56:13,560:DEBUG:1 change detected: {(<Change.modified: 2>, '/workspaces/api-contrat/app.log')}
+2025-04-10 19:56:58,405:INFO:Shutting down
+2025-04-10 19:56:58,507:INFO:Waiting for application shutdown.
+2025-04-10 19:56:58,509:INFO:Application shutdown complete.
+2025-04-10 19:56:58,510:INFO:Finished server process [29784]
+2025-04-10 19:56:58,514:INFO:Stopping reloader process [29782]
