@@ -1,0 +1,15 @@
+
+services:
+  app:
+    build: .
+    container_name: as400connect
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/home/as400connect
+    environment:
+      - CW_AS400_USER_ID=${CW_AS400_USER_ID}
+      - CW_AS400_USER_PWD=${CW_AS400_USER_PWD}
+      - CW_AS400_DATABASE=${CW_AS400_DATABASE}
+    
