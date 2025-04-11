@@ -3,6 +3,10 @@
 import pyodbc
 import logging 
 import os
+from dotenv import load_dotenv
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +37,7 @@ def connect_to_as400():
             f"PWD={password};"  # Remplacez par votre mot de passe
         )
         # Établir la connexion
+        print(connection_string)
         connection = pyodbc.connect(connection_string, autocommit=True, readonly=True)
         logging.debug(connection_string)
         logging.info("Connexion réussie à AS400 !")
