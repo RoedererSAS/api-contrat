@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 
 FROM python:3.10
 
@@ -26,5 +27,4 @@ RUN apt install ibm-iaccess -y
 
 WORKDIR /
 
-#CMD ["fastapi", "run", "app/main.py", "--port", "8000"]
-CMD ["python", "app/connect.py"]
+CMD ["fastapi", "run", "app/main.py", "--port", "8000"]
