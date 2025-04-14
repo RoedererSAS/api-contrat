@@ -1,0 +1,19 @@
+
+services:
+  app:
+    build: .
+    container_name: api-contrat
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/home/api-contrat
+      # - ..:/workspace:cached
+    env_file: ".app.env"
+    # command: /bin/sh -c "while sleep 1000; do :; done"
+    
+    # environment:
+    #   - CW_AS400_USER_ID=${CW_AS400_USER_ID}
+    #   - CW_AS400_USER_PWD=${CW_AS400_USER_PWD}
+    #   - CW_AS400_DATABASE=${CW_AS400_DATABASE}
+    
