@@ -75,7 +75,7 @@ def get_entreprise(id:int):
     return {"status": "ok"}
 
 
-@app.get("/contrats/{id:int}",response_model=list[Contrat], summary="Consulter les informations d'un contrat",
+@app.get("/contrats/{id:int}", summary="Consulter les informations d'un ou plusieurs contrats",
     description=f"""## GET CONTRAT
     
 Cette méthode prend en paramètre un numéro de contrat (un entier positif )
@@ -88,8 +88,13 @@ def get_contrats(id:int):
     if conn:
         cursor = conn.cursor()
         cursor.execute(f"SELECT * FROM {db_name}.DTWCNTR AS CNTR WHERE CNTR.CNTR_ID = {str(id)}")
+        rows = cursor.fetchall()
+        if rows is None or len(rows) == 0:
+            return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Contrat N°<{id}> not found.")
+        else:
+            return [{"id":id, "contrats": rows}]
     #return {"status": "ok"}
-    return [{"id":id}]
+    return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
 
 @app.get("/beneficiaires/{id:int}",response_model=list[Beneficiaire], summary="Consulter la liste des bénéficiaires",
     description=f"""## GET BENEFICIAIRE
