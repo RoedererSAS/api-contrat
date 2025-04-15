@@ -105,11 +105,16 @@ def get_contrats(id:int):
         rows = cursor.fetchall()
         if rows is None or len(rows) == 0:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Contrat N°<{id}> not found.")
-        
+        contrats = []
         header1 = ["id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
-        # header2 = ["deco_id","cntr_id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
-        # header:list = header1+header2   
-        return [{"id":id, "contrats": [dict(zip(header1,r)) for r in rows], "count": len(rows)}]
+        for r in rows:
+            contrat = dict(zip(header1,r))
+            contrat["entreprise"] = get_entreprise(contrat["entr_id"])
+            contrat["produit"] = get_produit(contrat["prdt_id"])
+            contrat["categorie"] = get_categorie(contrat["catg_code"].strip())
+            contrat["mutuelle"] = get_mutuelle(contrat["agen_id"])
+            contrats.append(contrat)
+        return [{"id":id, "contrats": contrats, "count": len(rows)}]
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
 @app.get("/mutuelle/{id:int}", summary="Consulter les informations d'une mutuelle",
     description=f"""## GET MUTUELLE
