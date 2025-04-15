@@ -3,13 +3,14 @@ import os
 
 import logging
 from app.db.database import connect_to_as400
-from fastapi import FastAPI, status
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, status, Path
+from typing import Optional, Union, Annotated
+from fastapi.responses import JSONResponse, Response
 from app.db.models import Assure, Entreprise, Contrat, Beneficiaire
 
-from dotenv import load_dotenv
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+# from dotenv import load_dotenv
+# dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+# load_dotenv(dotenv_path)
 
 db_name=os.getenv("CW_AS400_DATABASE")
 app = FastAPI(
@@ -25,7 +26,7 @@ app = FastAPI(
 
 
 
-@app.get("/assures/{id:int}", response_model=Assure, summary="Consulter les informations d'un assuré",
+@app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
     description=f"""## GET ASSURE    
 Cette méthode prend en paramètre un numéro d'assuré principal(entier positif) 
 et renvoie:
@@ -36,8 +37,8 @@ et renvoie:
     - les services 
     - les contrats
 """)
-def get_assure(id:int):
-    
+def get_assure(id: Annotated[int, Path(title="The ID of the item to get")]):
+
     db_name=os.getenv("CW_AS400_DATABASE")
     conn = connect_to_as400()
     if conn:
@@ -55,8 +56,8 @@ def get_assure(id:int):
         assure["contrats"] = get_contrats(assure["cntr_id"])
         assure["beneficiaires"] = []
         assure["services"] = []
-        Assure.model_validate(assure)
-        return Assure
+        # Assure.model_validate(assure)
+        return assure
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
     
 
@@ -82,6 +83,11 @@ et renvoie:
 un code de status ainsi qu'une liste de contrats
 """)
 def get_contrats(id:int):
+    db_name=os.getenv("CW_AS400_DATABASE")
+    conn = connect_to_as400()
+    if conn:
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM {db_name}.DTWCNTR AS CNTR WHERE CNTR.CNTR_ID = {str(id)}")
     #return {"status": "ok"}
     return [{"id":id}]
 

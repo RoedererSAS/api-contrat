@@ -1,8 +1,8 @@
 from pydantic import BaseModel
-
+import datetime
 
 class Beneficiaire(BaseModel):
-    id: str
+    id: int
     nir: str
     type: str
     nom: str
@@ -21,10 +21,10 @@ class Contrat(BaseModel):
     mutuelle_id:str
     
 class Assure(BaseModel):
-    id: str
-    cntr_id: str
-    pers_id: str
-    date_debut: str
+    id: int
+    cntr_id: int
+    pers_id: int
+    date_debut: datetime.date
     date_fin: str
     statut: str
     motif_debut: str
