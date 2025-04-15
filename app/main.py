@@ -70,7 +70,7 @@ def get_assure(id: Annotated[int, Path(title="Numéro de la personne assurée")]
             del assure["cntr_id"]
             del assure["parent_id"]
         assure["contrats"] = [get_contrat(id).get("contrat") for id in list(contrats)]
-        mutuelles = list(set([c["agent_id"] for c in assure["contrats"]]))
+        mutuelles = list(set([c["agen_id"] for c in assure["contrats"]]))
         entreprises = list(set([c["entr_id"] for c in assure["contrats"]]))
         produits = list(set([c["prd_id"] for c in assure["contrats"]]))
         assure["mutuelles"] = [get_mutuelle(m).get("mutuelle") for m in mutuelles]
