@@ -7,13 +7,6 @@ from fastapi import FastAPI, status, Path
 from typing import Optional, Union, Annotated
 from fastapi.responses import JSONResponse, Response
 from app.db.models import Assure, Entreprise, Contrat, Beneficiaire
-from fastapi.openapi.docs import (
-    get_swagger_ui_html,
-)
-from starlette.requests import Request
-# from dotenv import load_dotenv
-# dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-# load_dotenv(dotenv_path)
 
 db_name=os.getenv("CW_AS400_DATABASE")
 app = FastAPI(
@@ -112,7 +105,7 @@ def get_entreprise(id:int):
     return {"status": "ok"}
 
 
-@app.get("{id:int}", summary="Consulter les informations d'un contrat",
+@app.get("/{id:int}", summary="Consulter les informations d'un contrat",
     description=f"""## GET CONTRAT
     
 Cette méthode prend en paramètre un numéro de contrat (un entier positif )
@@ -139,7 +132,7 @@ def get_contrat(id:int):
         del contrat["catg_code"]
         contrat["mutuelle"] = get_mutuelle(contrat["agen_id"]).get("mutuelle")
         del contrat["agen_id"]
-        return {"contrat": contrat}
+        return contrat
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
 
 
