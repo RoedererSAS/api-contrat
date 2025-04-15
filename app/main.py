@@ -21,20 +21,16 @@ app = FastAPI(
     description="API exposant les données de l'infocentre",
     summary="Accéder aux informations sur les contrats, adherents, bénéficiaires et services",
     version="0.0.1",
+    openapi_url=f"/api/v1/openapi.json",
+    docs_url=f"/api/v1/docs",
+    redoc_url=f"/api/v1/redoc",
+    root_path="/app"
     contact={
         "name": "c24b <Constance de Quatrebarbes>",
         "email": "ext.cdequarebarbes@roederer.fr",
     },
 )
 
-@app.get("/docs", include_in_schema=False)
-async def custom_swagger_ui_html(req: Request):
-    root_path = req.scope.get("root_path", "").rstrip("/")
-    openapi_url = root_path + app.openapi_url
-    return get_swagger_ui_html(
-        openapi_url=openapi_url,
-        title="API Contrats",
-    )
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
     description=f"""## GET ASSURE    
