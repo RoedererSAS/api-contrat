@@ -24,7 +24,7 @@ app = FastAPI(
     openapi_url=f"/api/v1/openapi.json",
     docs_url=f"/api/v1/docs",
     redoc_url=f"/api/v1/redoc",
-    root_path="/app"
+    root_path="/app",
     contact={
         "name": "c24b <Constance de Quatrebarbes>",
         "email": "ext.cdequarebarbes@roederer.fr",
