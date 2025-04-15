@@ -52,13 +52,18 @@ def get_adherent(id: Annotated[int, Path(title="Numéro de la personne assurée"
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Adhérent N°<{id}> not found.")
         adherents = []
         contrats = set()
+        parent_ids = []
         header:list = ['id', 'cntr_id', 'pers_id', 'date_debut', 'date_fin', 'statut', 'motif_debut', 'motif_fin', 'mod_paiemt', 'freq_paiemt', 'exo_coti', 'parent_id', 'valide_du', 'createur', 'date_ins ', 'date_modif']
         for row in rows:
             assure = dict(zip(header, row))
-            contrats.add(assure["cntr_id"])
-            assure["contrats"] = get_contrats(assure["cntr_id"])
-            adherents.append(assure)
-        return {"adherents": adherents, "contrats": list(contrats), "nb": len(list(contrats)), "count": len(rows)}
+            # assure["id"] = assure["pers_id"]
+            # del assure["pers_id"]
+            contrats.add(get_contrat(assure["cntr_id"]))
+            parent_ids.append(assure["parent_id"])
+            del assure["cntr_id"]
+        assure["contrats"] = contrats
+        assure["parents"] = parent_ids
+        return {"adherent":assure}
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
@@ -129,31 +134,29 @@ def get_entreprise(id:int):
     
 Cette méthode prend en paramètre un numéro de contrat (un entier positif )
 et renvoie:
-un code de status ainsi qu'une liste de contrats
+un code de status ainsi qu'un contrat
 """)
-def get_contrats(id:int):
+def get_contrat(id:int):
     db_name=os.getenv("CW_AS400_DATABASE")
     conn = connect_to_as400()
     if conn:
         cursor = conn.cursor()
         cursor.execute(f"SELECT * FROM {db_name}.DTWCNTR AS CNTR WHERE CNTR.CNTR_ID = {str(id)}")
-        rows = cursor.fetchall()
-        if rows is None or len(rows) == 0:
+        row = cursor.fetchone()
+        if row is None or len(row) == 0:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Contrat N°<{id}> not found.")
-        contrats = []
+        
         header1 = ["id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
-        for r in rows:
-            contrat = dict(zip(header1,r))
-            entreprises = get_entreprise(contrat["entr_id"])
-            if entreprises["count"] > 1:
-                contrat["entreprises"]= entreprises["entreprises"]
-            else:
-                contrat["entreprise"]= entreprises["entreprises"][0]
-            contrat["produit"] = get_produit(contrat["prdt_id"]).get("produit")
-            contrat["categorie"] = get_categorie(contrat["catg_code"].strip()).get("categorie")
-            contrat["mutuelle"] = get_mutuelle(contrat["agen_id"]).get("mutuelle")
-            contrats.append(contrat)
-        return [{"id":id, "contrats": contrats, "count": len(rows)}]
+        contrat = dict(zip(header1,row))
+        entreprises = get_entreprise(contrat["entr_id"])
+        if entreprises["count"] > 1:
+            contrat["entreprises"]= entreprises["entreprises"]
+        else:
+            contrat["entreprise"]= entreprises["entreprises"][0]
+        contrat["produit"] = get_produit(contrat["prdt_id"]).get("produit")
+        contrat["categorie"] = get_categorie(contrat["catg_code"].strip()).get("categorie")
+        contrat["mutuelle"] = get_mutuelle(contrat["agen_id"]).get("mutuelle")
+        return {"contrat": contrat}
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
 
 
