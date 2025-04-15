@@ -37,7 +37,7 @@ def connect_to_as400():
             f"PWD={password};"  # Remplacez par votre mot de passe
         )
         # Établir la connexion
-        print(connection_string)
+        # print(connection_string)
         connection = pyodbc.connect(connection_string, autocommit=True, readonly=True)
         logging.debug(connection_string)
         logging.info("Connexion réussie à AS400 !")
