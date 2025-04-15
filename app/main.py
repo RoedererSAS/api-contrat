@@ -51,12 +51,14 @@ def get_adherent(id: Annotated[int, Path(title="Numéro de la personne assurée"
         if rows is None or len(rows) == 0:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Adhérent N°<{id}> not found.")
         adherents = []
+        contrats = set()
         header:list = ['id', 'cntr_id', 'pers_id', 'date_debut', 'date_fin', 'statut', 'motif_debut', 'motif_fin', 'mod_paiemt', 'freq_paiemt', 'exo_coti', 'parent_id', 'valide_du', 'createur', 'date_ins ', 'date_modif']
         for row in rows:
             assure = dict(zip(header, row))
+            contrats.add(assure["cntr_id"])
             assure["contrats"] = get_contrats(assure["cntr_id"])
             adherents.append(assure)
-        return {"adherents": adherents, "count": len(rows)}
+        return {"adherents": adherents, "contrats": list(contrats), "nb": len(list(contrats)), "count": len(rows)}
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
