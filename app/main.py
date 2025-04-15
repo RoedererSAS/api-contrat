@@ -33,7 +33,7 @@ async def custom_swagger_ui_html(req: Request):
     openapi_url = root_path + app.openapi_url
     return get_swagger_ui_html(
         openapi_url=openapi_url,
-        title="API",
+        title="API Contrats",
     )
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
@@ -119,10 +119,14 @@ def get_contrats(id:int):
         header1 = ["id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
         for r in rows:
             contrat = dict(zip(header1,r))
-            contrat["entreprise"] = get_entreprise(contrat["entr_id"])
-            contrat["produit"] = get_produit(contrat["prdt_id"])
-            contrat["categorie"] = get_categorie(contrat["catg_code"].strip())
-            contrat["mutuelle"] = get_mutuelle(contrat["agen_id"])
+            entreprises = get_entreprise(contrat["entr_id"])
+            if entreprises["count"] > 1:
+                contrat["entreprises"]= entreprises["entreprises"]
+            else:
+                contrat["entreprise"]= entreprises["entreprises"][0]
+            contrat["produit"] = get_produit(contrat["prdt_id"]).get("produit")
+            contrat["categorie"] = get_categorie(contrat["catg_code"].strip()).get("categorie")
+            contrat["mutuelle"] = get_mutuelle(contrat["agen_id"]).get("mutuelle")
             contrats.append(contrat)
         return [{"id":id, "contrats": contrats, "count": len(rows)}]
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
