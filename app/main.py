@@ -2,6 +2,7 @@
 import os
 
 import logging
+import requests
 from app.db.database import connect_to_as400
 from fastapi import FastAPI, status, Path
 from typing import Optional, Union, Annotated
@@ -205,6 +206,28 @@ def get_categorie(code:str):
 #     # Beneficiaire.parse_obj(row)
 #     return []
 
+
+# def check_database():
+#     try:
+#         connection = connect_to_as400()
+#         if connection:
+#             return True
+#         return False
+#     except:
+#         return False
+
+# def check_docs():
+#     try:
+#         response = requests.get('/docs')
+#         return response.status_code == 200
+#     except:
+#         return False
+    
 @app.get("/healthcheck", status_code=200)
 def healthcheck():
-    return {"status": "ok"}
+    conn = connect_to_as400()
+    if conn:
+        return {"status": "ok"}
+    else:
+        return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content="API is down. Checkout logs for more details.")
+    
