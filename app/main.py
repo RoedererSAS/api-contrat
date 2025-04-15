@@ -66,12 +66,26 @@ def get_assure(id: Annotated[int, Path(title="The ID of the item to get")]):
 Cette méthode prend en paramètre un numéro d'adhérent entreprise un entier positif 
 et renvoie:
 un code de status ainsi que les informations associées à l'entreprise
-- les element d'identification de l'assuré
+- les element d'identification de l'entreprise
+- les assurés
 - les bénéficiaires
 - les services 
 - les contrats
 """)
 def get_entreprise(id:int):
+    db_name=os.getenv("CW_AS400_DATABASE")
+    conn = connect_to_as400()
+    if conn:
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM {db_name}.DTWENTR AS ENT WHERE ENT.ENTR_ID = {str(id)}")
+        rows = cursor.fetchall()
+        if rows is None or len(rows) == 0:
+            return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"ENtreprise N°<{id}> not found.")
+        
+        header1 = ["id","raison_sociale","siret","code_ape","code_naf","fjur","rue_ligne1","rue_ligne2","rue_ligne3","dpt","cp","ville","pays","tel","centre_gest","atc","charge_cpte","date_creation","date_ins","date_modif"]
+        # header2 = ["deco_id","cntr_id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
+        # header:list = header1+header2   
+        return [{"id":id, "entreprises": [dict(zip(header1,r)) for r in rows], "count": len(rows)}]
     return {"status": "ok"}
 
 
@@ -91,12 +105,70 @@ def get_contrats(id:int):
         rows = cursor.fetchall()
         if rows is None or len(rows) == 0:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Contrat N°<{id}> not found.")
-        else:
-            return [{"id":id, "contrats": rows}]
-    #return {"status": "ok"}
+        
+        header1 = ["id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
+        # header2 = ["deco_id","cntr_id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
+        # header:list = header1+header2   
+        return [{"id":id, "contrats": [dict(zip(header1,r)) for r in rows], "count": len(rows)}]
+    return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
+@app.get("/mutuelle/{id:int}", summary="Consulter les informations d'une mutuelle",
+    description=f"""## GET MUTUELLE
+Cette méthode prend en paramètre un code de mutuelle (un entier positif )
+et renvoie:
+un code de status ainsi que la mutuelle""")
+def get_mutuelle(id:int):
+    db_name=os.getenv("CW_AS400_DATABASE")
+    conn = connect_to_as400()
+    if conn:
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM {db_name}.DTWAGEN AS MUT WHERE MUT.AGEN_ID = {str(id)}")
+        row = cursor.fetchone()
+        if row is None or len(row) == 0:
+            return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Mutuelle N°<{id}> not found.")
+        
+        header1 = ["id","libelle","portefeuille"]
+        return {"mutuelle": dict(zip(header1,row))}
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
 
-@app.get("/beneficiaires/{id:int}",response_model=list[Beneficiaire], summary="Consulter la liste des bénéficiaires",
+@app.get("/produit/{id:int}", summary="Consulter les informations d'un produit",
+    description=f"""## GET PRODUIT
+Cette méthode prend en paramètre un code de produit (un entier positif )
+et renvoie:
+un code de status ainsi que le produit""")
+def get_produit(id:int):
+    db_name=os.getenv("CW_AS400_DATABASE")
+    conn = connect_to_as400()
+    if conn:
+        cursor = conn.cursor()
+        
+        cursor.execute(f"SELECT * FROM {db_name}.DTWPRDT AS PRDT WHERE PRDT.PRDT_ID = {str(id)}")
+        row = cursor.fetchone()
+        if row is None or len(row) == 0:
+            return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"PRODUIT N°<{id}> not found.")
+        header1 = ["id","produit","option","libelle","libelle_court","code_famille","famille","type_gamme","date_ins","date_modif"]
+        return {"produit": dict(zip(header1,row))}
+    return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
+
+@app.get("/categorie/{code:str}", summary="Consulter les informations d'une catégorie",
+    description=f"""## GET CATEGORIE
+Cette méthode prend en paramètre un code de catégorie (une chaine de caractères)
+et renvoie:
+un code de status ainsi que la catégorie""")
+def get_categorie(code:str):
+    db_name=os.getenv("CW_AS400_DATABASE")
+    conn = connect_to_as400()
+    if conn:
+        cursor = conn.cursor()
+        
+        cursor.execute(f"SELECT * FROM {db_name}.DTWCATG AS CATG WHERE CATG.CATG_CODE = {code}")
+        row = cursor.fetchone()
+        if row is None or len(row) == 0:
+            return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"CATEGORIE CODE <{code}> not found.")
+        header1 = ["code","libelle","grd_college","famille_coti"]
+        return {"categorie": dict(zip(header1,row))}
+    return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
+
+@app.get("/beneficiaires/{id:int}", summary="Consulter la liste des bénéficiaires",
     description=f"""## GET BENEFICIAIRE
 Cette méthode prend en paramètre un numéro d'assuré (un entier positif )
 et renvoie:
