@@ -52,17 +52,17 @@ def get_adherent(id: Annotated[int, Path(title="Numéro de la personne assurée"
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Adhérent N°<{id}> not found.")
         adherents = []
         contrats = set()
-        parent_ids = []
+        parent_ids = set()
         header:list = ['id', 'cntr_id', 'pers_id', 'date_debut', 'date_fin', 'statut', 'motif_debut', 'motif_fin', 'mod_paiemt', 'freq_paiemt', 'exo_coti', 'parent_id', 'valide_du', 'createur', 'date_ins ', 'date_modif']
         for row in rows:
             assure = dict(zip(header, row))
             # assure["id"] = assure["pers_id"]
             # del assure["pers_id"]
-            contrats.add(get_contrat(assure["cntr_id"]))
-            parent_ids.append(assure["parent_id"])
+            contrats.add(assure["cntr_id"])
+            parent_ids.add(assure["parent_id"])
             del assure["cntr_id"]
-        assure["contrats"] = contrats
-        assure["parents"] = parent_ids
+        assure["contrats"] = [get_contrat(id) for id in list(contrats)]
+        assure["parents"] = list(parent_ids)
         return {"adherent":assure}
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
 
