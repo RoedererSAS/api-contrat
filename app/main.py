@@ -95,7 +95,7 @@ def get_entreprise(id:int):
         header1 = ["id","raison_sociale","siret","code_ape","code_naf","fjur","rue_ligne1","rue_ligne2","rue_ligne3","dpt","cp","ville","pays","tel","centre_gest","atc","charge_cpte","date_creation","date_ins","date_modif"]
         # header2 = ["deco_id","cntr_id","entr_id","agen_id","catg_code","prdt_id","date_debut","date_fin","date_suspension","motif_debut","motif_fin","num_charge_cpte","charge_compte","statut","responsable","terme_appel","ordre_decptage","assistance","mode_paiement","impaye_per","impaye_mnt","date_mise_dem","exo_coti","date_modif_erp","date_arrete","date_ins","date_modif"]
         # header:list = header1+header2   
-        return [{"id":id, "entreprises": [dict(zip(header1,r)) for r in rows], "count": len(rows)}]
+        return {"id":id, "entreprises": [dict(zip(header1,r)) for r in rows], "count": len(rows)}
     return {"status": "ok"}
 
 
