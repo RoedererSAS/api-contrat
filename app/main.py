@@ -7,7 +7,10 @@ from fastapi import FastAPI, status, Path
 from typing import Optional, Union, Annotated
 from fastapi.responses import JSONResponse, Response
 from app.db.models import Assure, Entreprise, Contrat, Beneficiaire
-
+from fastapi.openapi.docs import (
+    get_swagger_ui_html,
+)
+from starlette.requests import Request
 # from dotenv import load_dotenv
 # dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 # load_dotenv(dotenv_path)
@@ -24,7 +27,14 @@ app = FastAPI(
     },
 )
 
-
+@app.get("/docs", include_in_schema=False)
+async def custom_swagger_ui_html(req: Request):
+    root_path = req.scope.get("root_path", "").rstrip("/")
+    openapi_url = root_path + app.openapi_url
+    return get_swagger_ui_html(
+        openapi_url=openapi_url,
+        title="API",
+    )
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
     description=f"""## GET ASSURE    
@@ -116,6 +126,8 @@ def get_contrats(id:int):
             contrats.append(contrat)
         return [{"id":id, "contrats": contrats, "count": len(rows)}]
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")
+
+
 @app.get("/mutuelle/{id:int}", summary="Consulter les informations d'une mutuelle",
     description=f"""## GET MUTUELLE
 Cette méthode prend en paramètre un code de mutuelle (un entier positif )
@@ -164,8 +176,11 @@ def get_categorie(code:str):
     conn = connect_to_as400()
     if conn:
         cursor = conn.cursor()
-        
-        cursor.execute(f"SELECT * FROM {db_name}.DTWCATG AS CATG WHERE CATG.CATG_CODE = {code}")
+        query = f"SELECT * FROM {db_name}.DTWCATG AS CATG WHERE CATG.CATG_CODE = '{code}'"
+        try:
+            cursor.execute(query)
+        except Exception as e:
+             return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=""f"Erreur de connexion à la BDD: {e}")
         row = cursor.fetchone()
         if row is None or len(row) == 0:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"CATEGORIE CODE <{code}> not found.")
