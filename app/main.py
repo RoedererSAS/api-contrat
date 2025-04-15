@@ -2,7 +2,6 @@
 import os
 
 import logging
-import requests
 from app.db.database import connect_to_as400
 from fastapi import FastAPI, status, Path
 from typing import Optional, Union, Annotated
@@ -26,7 +25,8 @@ app = FastAPI(
 )
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
-    description=f"""## GET ASSURE    
+    description=f"""## GET ASSURE 
+
 Cette méthode prend en paramètre un numéro d'assuré principal(entier positif) 
 et renvoie:
 - un code de status 
@@ -108,10 +108,10 @@ def get_entreprise(id:int):
 
 @app.get("/{id:int}", summary="Consulter les informations d'un contrat",
     description=f"""## GET CONTRAT
-    
 Cette méthode prend en paramètre un numéro de contrat (un entier positif )
-et renvoie:
-un code de status ainsi qu'un contrat
+et renvoie :
+- un code de status 
+- un contrat
 """)
 def get_contrat(id:int):
     db_name=os.getenv("CW_AS400_DATABASE")
@@ -228,6 +228,6 @@ def healthcheck():
     conn = connect_to_as400()
     if conn:
         return {"status": "ok"}
-    else:
-        return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content="API is down. Checkout logs for more details.")
+    return {"status": "ko", "message": "Database connection failed."}
+    # return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content="API is down. Checkout logs for more details.")
     
