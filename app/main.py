@@ -24,13 +24,40 @@ app = FastAPI(
     openapi_url=f"/api/v1/openapi.json",
     docs_url=f"/api/v1/docs",
     redoc_url=f"/api/v1/redoc",
-    root_path="/app",
+    root_path="/contrats",
     contact={
         "name": "c24b <Constance de Quatrebarbes>",
         "email": "ext.cdequarebarbes@roederer.fr",
     },
 )
-
+@app.get("/adherent/{id:int}", summary="Consulter les informations d'un assuré",
+    description=f"""## GET ADHERENTCette méthode prend en paramètre un numéro d'assuré principal(entier positif) 
+et renvoie:
+- un code de status 
+- ainsi que les informations associées à l'assuré:
+    - les élément d'identification de l'assuré
+    - les bénéficiaires
+    - les services 
+    - les contrats
+""")    
+def get_adherent(id: Annotated[int, Path(title="Numéro de la personne assurée")]):
+    db_name=os.getenv("CW_AS400_DATABASE")
+    conn = connect_to_as400()
+    if conn:
+        cursor = conn.cursor()
+        pers_id:int = id*100
+        cursor.execute(f"SELECT * FROM {db_name}.DTWADHE AS ADH WHERE ADH.ADHE_PERS_ID = {str(pers_id)}")
+        rows = cursor.fetchall()
+        if rows is None or len(rows) == 0:
+            return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=f"Adhérent N°<{id}> not found.")
+        adherents = []
+        header:list = ['id', 'cntr_id', 'pers_id', 'date_debut', 'date_fin', 'statut', 'motif_debut', 'motif_fin', 'mod_paiemt', 'freq_paiemt', 'exo_coti', 'parent_id', 'valide_du', 'createur', 'date_ins ', 'date_modif']
+        for row in rows:
+            assure = dict(zip(header, row))
+            assure["contrats"] = get_contrats(assure["cntr_id"])
+            adherents.append(assure)
+        return {"adherents": adherents, "count": len(rows)}
+     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
     description=f"""## GET ASSURE    
@@ -43,7 +70,7 @@ et renvoie:
     - les services 
     - les contrats
 """)
-def get_assure(id: Annotated[int, Path(title="The ID of the item to get")]):
+def get_assure(id: Annotated[int, Path(title="Numéro de la personne assurée")]):
 
     db_name=os.getenv("CW_AS400_DATABASE")
     conn = connect_to_as400()
