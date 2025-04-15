@@ -57,7 +57,7 @@ def get_adherent(id: Annotated[int, Path(title="Numéro de la personne assurée"
             assure["contrats"] = get_contrats(assure["cntr_id"])
             adherents.append(assure)
         return {"adherents": adherents, "count": len(rows)}
-     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
+    return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
 
 @app.get("/assures/{id:int}", summary="Consulter les informations d'un assuré",
     description=f"""## GET ASSURE    
