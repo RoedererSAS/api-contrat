@@ -70,14 +70,14 @@ def get_assure(id: Annotated[int, Path(title="Numéro de la personne assurée")]
             del assure["cntr_id"]
             del assure["parent_id"]
         assure["contrats"] = [get_contrat(id).get("contrat") for id in list(contrats)]
-        mutuelles = list(set([c["agen_id"] for c in assure["contrats"]]))
-        entreprises = list(set([c["entr_id"] for c in assure["contrats"]]))
-        produits = list(set([c["prd_id"] for c in assure["contrats"]]))
-        assure["mutuelles"] = [get_mutuelle(m).get("mutuelle") for m in mutuelles]
-        assure["entreprises"] = [get_entreprise(e).get("entreprise") for e in entreprises]
-        assure["produits"] = [get_produit(p).get("produit") for p in produits]
-        assure["categorie"] = assure["contrats"][0]["categorie"]
-        assure["parents"] = list(parent_ids)# je ne sais pas à quoi ca sert pour le moment
+        # mutuelles = list(set([c["agen_id"] for c in assure["contrats"]]))
+        # entreprises = list(set([c["entr_id"] for c in assure["contrats"]]))
+        # produits = list(set([c["prd_id"] for c in assure["contrats"]]))
+        # assure["mutuelles"] = [get_mutuelle(m).get("mutuelle") for m in mutuelles]
+        # assure["entreprises"] = [get_entreprise(e).get("entreprise") for e in entreprises]
+        # assure["produits"] = [get_produit(p).get("produit") for p in produits]
+        # assure["categorie"] = assure["contrats"][0]["categorie"]
+        # assure["parents"] = list(parent_ids)# je ne sais pas à quoi ca sert pour le moment
         
         # Assure.model_validate(assure)
         return assure
