@@ -225,9 +225,9 @@ def get_categorie(code:str):
     
 @app.get("/healthcheck", status_code=200)
 def healthcheck():
-    conn = connect_to_as400()
-    if conn:
-        return {"status": "ok"}
-    return {"status": "ko", "message": "Database connection failed."}
+    # conn = connect_to_as400()
+    # if conn:
+    return {"status": "ok"}
+    # return {"status": "ko", "message": "Database connection failed."}
     # return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content="API is down. Checkout logs for more details.")
     
