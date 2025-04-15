@@ -59,9 +59,11 @@ def get_adherent(id: Annotated[int, Path(title="Numéro de la personne assurée"
             # assure["id"] = assure["pers_id"]
             # del assure["pers_id"]
             contrats.add(assure["cntr_id"])
-            parent_ids.add(assure["parent_id"])
+            if assure["parent_id"] is not None:
+                parent_ids.add(assure["parent_id"])
             del assure["cntr_id"]
-        assure["contrats"] = [get_contrat(id) for id in list(contrats)]
+            del assure["parent_id"]
+        assure["contrats"] = [get_contrat(id).get("contrat") for id in list(contrats)]
         assure["parents"] = list(parent_ids)
         return {"adherent":assure}
     return JSONResponse(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, content=f"Erreur de connexion à la BDD")    
